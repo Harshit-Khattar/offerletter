@@ -1,0 +1,15 @@
+{
+  "name": "offerletter-marketplace",
+  "owner": {
+    "name": "Harshit Khattar",
+    "email": "harshitkhattar@example.com"
+  },
+  "plugins": [
+    {
+      "name": "offerletter",
+      "source": "./",
+      "description": "Tailor resumes, craft cover letters, prep for interviews, and research companies.",
+      "version": "1.0.0"
+    }
+  ]
+}

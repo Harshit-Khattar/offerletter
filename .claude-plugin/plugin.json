@@ -1,0 +1,12 @@
+{
+  "name": "offerletter",
+  "description": "AI-powered career toolkit for students — tailor resumes, craft cover letters, prep for interviews, and research companies.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Harshit Khattar"
+  },
+  "homepage": "https://github.com/Harshit-Khattar/offerletter",
+  "repository": "https://github.com/Harshit-Khattar/offerletter",
+  "license": "MIT",
+  "keywords": ["resume", "interview", "career", "job-search", "cover-letter", "students"]
+}
