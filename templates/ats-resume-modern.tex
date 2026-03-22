@@ -1,0 +1,128 @@
+% ATS Resume Template — Modern
+% Clean single-column layout with subtle accent colors.
+% Best for tech roles. Compiles with pdflatex or tectonic.
+
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[top=0.5in,bottom=0.5in,left=0.6in,right=0.6in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Accent color — change to match your preference
+\definecolor{accent}{RGB}{0, 90, 160}
+
+% Section formatting with accent color
+\titleformat{\section}{\large\bfseries\color{accent}\uppercase}{}{0em}{}[\color{accent}\titlerule]
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+
+% Tighter list spacing
+\setlist[itemize]{nosep, leftmargin=1.5em, label={\color{accent}\textbullet}}
+
+% No paragraph indent
+\setlength{\parindent}{0pt}
+
+% Hyperlink style
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+% Custom commands
+\newcommand{\entry}[4]{%
+    \textbf{#1} \hfill #2 \\
+    \textit{#3} \hfill \textit{#4}
+}
+
+\begin{document}
+
+% ============================================================
+% HEADER — REPLACE with your information
+% ============================================================
+\begin{center}
+    {\LARGE\bfseries\color{accent} % REPLACE: Your Full Name
+    First Last} \\[4pt]
+    % REPLACE: Your contact details
+    City, State \quad $\cdot$ \quad
+    \href{mailto:email@example.com}{email@example.com} \quad $\cdot$ \quad
+    (555) 123-4567 \\
+    \href{https://linkedin.com/in/yourprofile}{linkedin.com/in/yourprofile} \quad $\cdot$ \quad
+    \href{https://github.com/yourusername}{github.com/yourusername} \quad $\cdot$ \quad
+    \href{https://yourportfolio.com}{yourportfolio.com}
+\end{center}
+
+% ============================================================
+% SUMMARY
+% ============================================================
+\section{Summary}
+% REPLACE: 2-3 sentences tailored to the target role.
+Software engineer with experience building scalable web applications and data pipelines. Passionate about clean code, user experience, and solving complex problems. Seeking roles where I can contribute to impactful products while growing as an engineer.
+
+% ============================================================
+% SKILLS
+% ============================================================
+\section{Technical Skills}
+% REPLACE: Customize categories to match the job description.
+\textbf{Languages:} Python, TypeScript, Java, Go, SQL \\
+\textbf{Frontend:} React, Next.js, Tailwind CSS, HTML/CSS \\
+\textbf{Backend:} Node.js, FastAPI, Spring Boot, GraphQL \\
+\textbf{Data \& ML:} PyTorch, Pandas, Spark, Scikit-learn \\
+\textbf{Infrastructure:} AWS (EC2, S3, Lambda), Docker, Kubernetes, Terraform, CI/CD \\
+\textbf{Databases:} PostgreSQL, Redis, MongoDB, DynamoDB
+
+% ============================================================
+% EXPERIENCE
+% ============================================================
+\section{Experience}
+
+% REPLACE: Add your work experience. Copy this block for each position.
+\entry{Software Engineering Intern}{May 2025 -- Aug 2025}{Company Name}{City, State}
+\begin{itemize}
+    \item Architected and deployed a microservice handling 5K+ requests/second, reducing p99 latency from 800ms to 200ms
+    \item Designed a caching layer using Redis that decreased database load by 40\% across the team's services
+    \item Led migration of legacy REST endpoints to GraphQL, improving frontend data fetching efficiency by 60\%
+\end{itemize}
+
+\vspace{4pt}
+\entry{Data Science Intern}{Jun 2024 -- Aug 2024}{Company Name}{City, State}
+\begin{itemize}
+    \item Built an ML pipeline processing 2M+ records daily for real-time fraud detection, achieving 94\% precision
+    \item Developed A/B testing framework that reduced experiment setup time from 2 days to 30 minutes
+    \item Presented findings to VP of Engineering, leading to adoption of the model in production
+\end{itemize}
+
+% ============================================================
+% PROJECTS
+% ============================================================
+\section{Projects}
+
+% REPLACE: Add your key projects.
+\textbf{Project Name} $|$ \textit{Python, FastAPI, React, PostgreSQL} \hfill \href{https://github.com/yourusername/project}{GitHub}
+\begin{itemize}
+    \item Built a full-stack application for [purpose] with [key feature] serving [number] users
+    \item Implemented real-time [feature] using WebSockets, achieving sub-100ms update latency
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Project Name} $|$ \textit{PyTorch, Hugging Face, Docker} \hfill \href{https://github.com/yourusername/project}{GitHub}
+\begin{itemize}
+    \item Fine-tuned a transformer model for [task], achieving [metric] on [benchmark]
+    \item Deployed as a REST API on AWS Lambda with auto-scaling, handling [scale] inference requests
+\end{itemize}
+
+% ============================================================
+% EDUCATION
+% ============================================================
+\section{Education}
+
+\entry{Master of Science in Computer Science}{Expected May 2026}{University Name}{City, State} \\
+GPA: 3.8/4.0 \quad $|$ \quad Coursework: Deep Learning, Distributed Systems, Computer Vision
+
+\vspace{4pt}
+\entry{Bachelor of Science in Computer Science}{May 2024}{University Name}{City, State} \\
+GPA: 3.7/4.0 \quad $|$ \quad Dean's List (6 semesters) \quad $|$ \quad CS Honors Society
+
+\end{document}

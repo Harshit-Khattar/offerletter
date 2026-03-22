@@ -1,0 +1,164 @@
+% ATS Resume Template — Academic
+% For research/academic roles. Includes publications, research, teaching.
+% Compiles with pdflatex or tectonic.
+
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[top=0.5in,bottom=0.5in,left=0.6in,right=0.6in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+
+% Subsection formatting
+\titleformat{\subsection}[runin]{\bfseries}{}{0em}{}[.]
+\titlespacing*{\subsection}{0pt}{6pt}{4pt}
+
+% Tighter list spacing
+\setlist[itemize]{nosep, leftmargin=1.5em, label=\textbullet}
+\setlist[enumerate]{nosep, leftmargin=1.5em}
+
+% No paragraph indent
+\setlength{\parindent}{0pt}
+
+% Hyperlink style
+\hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
+
+\begin{document}
+
+% ============================================================
+% HEADER — REPLACE with your information
+% ============================================================
+\begin{center}
+    {\LARGE\bfseries % REPLACE: Your Full Name
+    First Last} \\[4pt]
+    % REPLACE: Your contact details
+    City, State \quad
+    \href{mailto:email@example.com}{email@example.com} \quad
+    (555) 123-4567 \\
+    \href{https://linkedin.com/in/yourprofile}{LinkedIn} \quad
+    \href{https://github.com/yourusername}{GitHub} \quad
+    \href{https://scholar.google.com/citations?user=YOURID}{Google Scholar}
+\end{center}
+
+% ============================================================
+% EDUCATION
+% ============================================================
+\section{Education}
+
+% REPLACE: Add your education. For academic CVs, education comes first.
+\textbf{Master of Science in Computer Science} \hfill Expected May 2026 \\
+\textit{University Name} \hfill City, State \\
+GPA: 3.9/4.0 \quad Advisor: Prof.\ [Name] \\
+Thesis: ``[Your Thesis Title]'' \\
+Relevant Coursework: Advanced Machine Learning, Natural Language Processing, Statistical Learning Theory
+
+\vspace{4pt}
+\textbf{Bachelor of Science in Computer Science} \hfill May 2024 \\
+\textit{University Name} \hfill City, State \\
+GPA: 3.8/4.0 \quad \textit{Summa Cum Laude} \\
+Honors Thesis: ``[Your Thesis Title]''
+
+% ============================================================
+% RESEARCH EXPERIENCE
+% ============================================================
+\section{Research Experience}
+
+% REPLACE: Add your research positions. Copy this block for each.
+\textbf{Graduate Research Assistant} \hfill Sep 2024 -- Present \\
+\textit{Lab Name, University Name} \hfill Advisor: Prof.\ [Name]
+\begin{itemize}
+    \item Investigating [research topic] using [methods], contributing to [broader goal]
+    \item Developed novel approach to [specific problem] that improved [metric] by [amount] over baseline
+    \item Implemented experimental pipeline processing [scale] data points across [number] GPU nodes
+    \item Results published at [venue] and presented as oral/poster at [conference]
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Undergraduate Research Assistant} \hfill Jan 2023 -- May 2024 \\
+\textit{Lab Name, University Name} \hfill Advisor: Prof.\ [Name]
+\begin{itemize}
+    \item Conducted experiments on [topic] analyzing [dataset/system] with [number] samples
+    \item Designed and implemented [tool/method] for [purpose]
+    \item Co-authored [number] papers submitted to [venues]
+\end{itemize}
+
+% ============================================================
+% PUBLICATIONS
+% ============================================================
+\section{Publications}
+
+% REPLACE: List your publications in reverse chronological order.
+% Use consistent citation format. Bold your name.
+
+\begin{enumerate}
+    \item \textbf{Last, F.}, Co-Author, A., and Co-Author, B. ``Paper Title.'' \textit{Conference/Journal Name}, 2026. (Under Review)
+
+    \item \textbf{Last, F.} and Advisor, P. ``Paper Title.'' \textit{Proceedings of the Conference Name (CONF'25)}, 2025. \href{https://doi.org/XXXXX}{[DOI]}
+
+    \item Co-Author, A., \textbf{Last, F.}, and Co-Author, C. ``Paper Title.'' \textit{Workshop on Topic (Workshop'24)}, 2024. \href{https://arxiv.org/abs/XXXXX}{[arXiv]}
+\end{enumerate}
+
+% ============================================================
+% TEACHING
+% ============================================================
+\section{Teaching Experience}
+
+% REPLACE: Add teaching roles.
+\textbf{Teaching Assistant — CS 501: Machine Learning} \hfill Spring 2025 \\
+\textit{University Name}
+\begin{itemize}
+    \item Led weekly office hours and review sessions for 120+ students
+    \item Designed 3 programming assignments on neural networks and model evaluation
+    \item Received 4.8/5.0 student evaluation rating
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Teaching Assistant — CS 201: Data Structures} \hfill Fall 2023 \\
+\textit{University Name}
+\begin{itemize}
+    \item Tutored 80+ students in weekly lab sections on trees, graphs, and hash maps
+    \item Created supplementary study materials adopted by other TAs
+\end{itemize}
+
+% ============================================================
+% SKILLS
+% ============================================================
+\section{Technical Skills}
+
+% REPLACE: List your technical skills.
+\textbf{Languages:} Python, C++, R, MATLAB, SQL, LaTeX \\
+\textbf{ML/DL:} PyTorch, TensorFlow, Hugging Face, Scikit-learn, JAX \\
+\textbf{Tools:} Git, Docker, SLURM, Weights \& Biases, Jupyter \\
+\textbf{Platforms:} AWS, GCP, Linux (Ubuntu), HPC clusters
+
+% ============================================================
+% AWARDS & HONORS
+% ============================================================
+\section{Awards \& Honors}
+
+% REPLACE: Add your awards.
+\textbf{Best Paper Award} — Workshop on [Topic], Conference 2025 \hfill 2025 \\
+\textbf{Graduate Research Fellowship} — University Name \hfill 2024--2026 \\
+\textbf{Dean's List} — University Name (all semesters) \hfill 2020--2024 \\
+\textbf{1st Place} — [Hackathon/Competition Name] \hfill 2023
+
+% ============================================================
+% PROFESSIONAL SERVICE (optional)
+% ============================================================
+\section{Professional Service}
+
+% REPLACE: Add reviewing, organizing, volunteering.
+Reviewer: [Conference/Workshop Name] 2025 \\
+Student Volunteer: [Conference Name] 2024 \\
+Organizer: [Event/Club Name], University Name
+
+\end{document}

@@ -1,0 +1,120 @@
+% ATS Resume Template — Clean
+% Minimal single-column layout. Maximum ATS compatibility.
+% Compiles with pdflatex or tectonic.
+
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[top=0.5in,bottom=0.5in,left=0.6in,right=0.6in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+
+% Tighter list spacing
+\setlist[itemize]{nosep, leftmargin=1.5em, label=\textbullet}
+
+% No paragraph indent
+\setlength{\parindent}{0pt}
+
+% Hyperlink style
+\hypersetup{colorlinks=true, urlcolor=black, linkcolor=black}
+
+\begin{document}
+
+% ============================================================
+% HEADER — REPLACE with your information
+% ============================================================
+\begin{center}
+    {\LARGE\bfseries % REPLACE: Your Full Name
+    First Last} \\[4pt]
+    % REPLACE: Your contact details
+    City, State \quad
+    \href{mailto:email@example.com}{email@example.com} \quad
+    (555) 123-4567 \quad
+    \href{https://linkedin.com/in/yourprofile}{LinkedIn} \quad
+    \href{https://github.com/yourusername}{GitHub}
+\end{center}
+
+% ============================================================
+% SUMMARY (optional — remove if not needed)
+% ============================================================
+\section{Summary}
+% REPLACE: 2-3 sentences summarizing your background, key skills, and career objective.
+% Tailor this to each job description.
+Results-driven computer science student with experience in software development and data analysis. Skilled in Python, Java, and SQL with a track record of delivering projects on deadline.
+
+% ============================================================
+% SKILLS
+% ============================================================
+\section{Skills}
+% REPLACE: List your technical skills, organized by category.
+\textbf{Languages:} Python, Java, JavaScript, SQL, C++ \\
+\textbf{Frameworks:} React, Node.js, Flask, TensorFlow \\
+\textbf{Tools:} Git, Docker, AWS, PostgreSQL, Linux \\
+\textbf{Concepts:} Data Structures, Algorithms, REST APIs, Agile, CI/CD
+
+% ============================================================
+% EXPERIENCE
+% ============================================================
+\section{Experience}
+
+% REPLACE: Add your work experience. Copy this block for each position.
+\textbf{Software Engineering Intern} \hfill May 2025 -- Aug 2025 \\
+\textit{Company Name} \hfill City, State
+\begin{itemize}
+    \item Built a REST API endpoint handling 1,000+ daily requests, reducing response time by 35\%
+    \item Collaborated with a 5-person team to deliver a customer dashboard feature ahead of schedule
+    \item Wrote unit tests achieving 90\% code coverage for the payments module
+\end{itemize}
+
+\textbf{Research Assistant} \hfill Sep 2024 -- May 2025 \\
+\textit{University Name, Department} \hfill City, State
+\begin{itemize}
+    \item Developed a data pipeline processing 50K+ records daily for NLP research project
+    \item Implemented text classification model achieving 87\% accuracy on benchmark dataset
+    \item Co-authored paper submitted to ACL Workshop 2025
+\end{itemize}
+
+% ============================================================
+% PROJECTS
+% ============================================================
+\section{Projects}
+
+% REPLACE: Add your key projects. Copy this block for each project.
+\textbf{Project Name} \hfill \href{https://github.com/yourusername/project}{GitHub} \\
+\textit{Python, TensorFlow, Flask}
+\begin{itemize}
+    \item Designed and built a web application that [what it does] serving [number] users
+    \item Implemented [specific feature] using [technology], improving [metric] by [amount]
+\end{itemize}
+
+\textbf{Project Name} \hfill \href{https://github.com/yourusername/project}{GitHub} \\
+\textit{React, Node.js, MongoDB}
+\begin{itemize}
+    \item Developed a full-stack application for [purpose] with [key feature]
+    \item Deployed on AWS using Docker, handling [scale] concurrent users
+\end{itemize}
+
+% ============================================================
+% EDUCATION
+% ============================================================
+\section{Education}
+
+% REPLACE: Add your education. Copy this block for each degree.
+\textbf{Master of Science in Computer Science} \hfill Expected May 2026 \\
+\textit{University Name} \hfill City, State \\
+GPA: 3.8/4.0 \quad Relevant Coursework: Machine Learning, Distributed Systems, Algorithms
+
+\textbf{Bachelor of Science in Computer Science} \hfill May 2024 \\
+\textit{University Name} \hfill City, State \\
+GPA: 3.7/4.0
+
+\end{document}
