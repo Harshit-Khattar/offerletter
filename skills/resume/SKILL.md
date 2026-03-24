@@ -75,7 +75,26 @@ Share with the user:
 - They may want to add context ("I actually did more ML work than my resume shows"), reject changes, or redirect focus
 - Incorporate their feedback
 
-### Step 4: Write the tailored resume
+### Step 4: Confirm before editing
+**CRITICAL: Never edit the resume without explicit approval.** Before making any changes, present a clear summary:
+
+> "Here's what I'll change in your tailored resume:"
+>
+> 1. **Skills section:** [specific changes]
+> 2. **Experience bullet 1:** [before → after]
+> 3. **Experience bullet 2:** [before → after]
+> 4. **Projects:** [specific changes]
+> 5. **Summary:** [specific changes]
+>
+> "Would you like to:
+> - **Go ahead** with all changes
+> - **Remove** any specific changes from the list
+> - **Modify** any of the proposed changes
+> - **Add** something else?"
+
+Wait for the user's response. Only proceed to Step 5 after they explicitly approve.
+
+### Step 5: Write the tailored resume
 Once the user approves:
 1. Create `companies/<company-name>/` folder if it doesn't exist
 2. Save `job-description.txt`

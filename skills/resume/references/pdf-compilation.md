@@ -29,9 +29,14 @@ tectonic --version 2>/dev/null && echo "FOUND: tectonic"
 - If **any** compiler is found → use it (prefer pdflatex > xelatex > tectonic for speed)
 - If **none** found → proceed to step 3
 
-### 3. Install a Compiler
+### 3. Auto-Install Tectonic
 
-Detect the OS and available package managers:
+If no compiler is found, **automatically install tectonic** — a lightweight LaTeX compiler (~30MB, no dependencies). Do NOT suggest MacTeX or TeX Live — they are multi-GB installs and unnecessary.
+
+Tell the user:
+> "No LaTeX compiler found. I'll install tectonic — a lightweight compiler (~30MB) — so I can generate your PDF."
+
+Then detect the OS and install:
 
 ```bash
 uname -s  # Darwin = macOS, Linux = Linux, MINGW/MSYS = Windows
@@ -42,22 +47,21 @@ uname -s  # Darwin = macOS, Linux = Linux, MINGW/MSYS = Windows
 # Try Homebrew first
 which brew && brew install tectonic
 
-# No Homebrew — download binary
+# No Homebrew — download binary directly
 curl -LO https://github.com/tectonic-typesetting/tectonic/releases/latest/download/tectonic-x86_64-apple-darwin.tar.gz
 tar xzf tectonic-x86_64-apple-darwin.tar.gz
 chmod +x tectonic
 sudo mv tectonic /usr/local/bin/
+rm tectonic-x86_64-apple-darwin.tar.gz
 ```
 
 **Windows:**
 ```bash
-# Try winget
+# Try winget first
 winget install tectonic-typesetting.tectonic
 
-# Try scoop
+# Fallback: try scoop
 scoop install tectonic
-
-# Manual: download from https://github.com/tectonic-typesetting/tectonic/releases
 ```
 
 **Linux:**
@@ -71,14 +75,15 @@ sudo dnf install tectonic
 # Arch
 sudo pacman -S tectonic
 
-# Manual: download binary
+# Fallback: download binary
 curl -LO https://github.com/tectonic-typesetting/tectonic/releases/latest/download/tectonic-x86_64-unknown-linux-gnu.tar.gz
 tar xzf tectonic-x86_64-unknown-linux-gnu.tar.gz
 chmod +x tectonic
 sudo mv tectonic /usr/local/bin/
+rm tectonic-x86_64-unknown-linux-gnu.tar.gz
 ```
 
-**IMPORTANT:** Always ask the user for permission before installing anything. Explain what you're installing and why.
+**Do not ask for permission** — just install it and inform the user. Tectonic is small and safe. If the install fails (e.g., no sudo access), then fall back to telling the user how to install it manually.
 
 ### 4. Compile
 
