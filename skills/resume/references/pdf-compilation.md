@@ -26,7 +26,7 @@ xelatex --version 2>/dev/null && echo "FOUND: xelatex"
 tectonic --version 2>/dev/null && echo "FOUND: tectonic"
 ```
 
-- If **any** compiler is found → use it (prefer pdflatex > xelatex > tectonic for speed)
+- If **any** compiler is found → use it (prefer pdflatex > xelatex > tectonic). pdflatex is preferred because it matches Overleaf's default engine, producing output closest to what students see when editing on Overleaf
 - If **none** found → proceed to step 3
 
 ### 3. Auto-Install Tectonic
@@ -87,18 +87,39 @@ rm tectonic-x86_64-unknown-linux-gnu.tar.gz
 
 ### 4. Compile
 
+**Important:** Use the same filename as the master resume (e.g., if master is `main 2.tex`, compile `main 2.tex` — not `resume.tex`).
+
 ```bash
 cd companies/<company-name>/
 
 # Using pdflatex (run twice for references)
-pdflatex -interaction=nonstopmode resume.tex
-pdflatex -interaction=nonstopmode resume.tex
+pdflatex -interaction=nonstopmode "filename.tex"
+pdflatex -interaction=nonstopmode "filename.tex"
 
 # OR using tectonic (handles multiple passes automatically)
-tectonic resume.tex
+tectonic "filename.tex"
 ```
 
-### 5. Clean Up Build Artifacts
+### 5. Verify Page Count
+
+**Student resumes MUST be exactly one page.** After compilation, check the page count:
+
+```bash
+# macOS (built-in — preferred)
+mdls -name kMDItemNumberOfPages "companies/<company-name>/filename.pdf" 2>/dev/null
+
+# Cross-platform fallback (if pdfinfo is available)
+pdfinfo "companies/<company-name>/filename.pdf" 2>/dev/null | grep Pages
+```
+
+**If the PDF is more than one page:**
+1. Do NOT deliver it to the user as-is
+2. Tell the user: "The tailored resume is [N] pages. Student resumes should be exactly one page."
+3. Identify which sections are likely causing overflow (extra bullets, verbose descriptions, too many items)
+4. Suggest specific cuts and ask the user to choose what to remove
+5. After the user decides, update the `.tex` file, recompile, and verify again
+
+### 6. Clean Up Build Artifacts
 
 ```bash
 cd companies/<company-name>/
@@ -107,7 +128,7 @@ rm -f *.aux *.log *.out *.synctex.gz *.fls *.fdb_latexmk
 
 Keep only the `.tex` and `.pdf` files.
 
-### 6. Handle Failures
+### 7. Handle Failures
 
 If compilation fails:
 - Read the error output carefully

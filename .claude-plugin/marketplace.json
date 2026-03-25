@@ -1,8 +1,9 @@
 {
   "name": "offerletter-marketplace",
+  "description": "AI-powered career toolkit for students — tailor resumes, craft cover letters, prep for interviews, and research companies.",
   "owner": {
     "name": "Harshit Khattar",
-    "email": "harshitkhattar@example.com"
+    "email": "hkhatter03@gmail.com"
   },
   "plugins": [
     {

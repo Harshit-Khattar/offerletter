@@ -28,10 +28,12 @@ You MUST follow these rules at all times:
 1. **Never modify the master resume** — always create new files in `companies/<company-name>/`
 2. **Save the job description first** — write it to `companies/<company-name>/job-description.txt` before doing any analysis
 3. **Match the user's writing style** — study their master resume's tone, sentence patterns, and vocabulary. The output must not sound AI-generated
-4. **Preserve the source format** — if the master resume is `.tex`, output `.tex` in the same style. If `.md`, output `.md`
-5. **Company folder naming** — lowercase, hyphens for spaces (e.g., `goldman-sachs`, `jane-street`, `boston-consulting-group`)
-6. **Don't overwrite without asking** — if a company folder already exists with a tailored resume, ask before replacing it
-7. **Be interactive** — present your analysis and suggestions first, discuss with the user, and only write files after they approve
+4. **Copy the preamble verbatim** — for `.tex` files, copy EVERYTHING before `\begin{document}` from the master resume into the tailored resume **exactly as-is**. Do not remove, add, or modify any packages, font settings, margin adjustments, custom commands, `\input` lines, or `\vspace` values. Only modify content inside `\begin{document}...\end{document}`. This is critical for matching fonts and spacing
+5. **Keep the same filename** — the tailored output must use the same base filename as the master resume. If the master is `main 2.tex`, save as `companies/<company-name>/main 2.tex` (not `resume.tex`). The compiled PDF should also match (e.g., `main 2.pdf`)
+6. **One page maximum** — student resumes MUST fit on one page. After compiling to PDF, always verify the page count. If it exceeds one page, tell the user which sections are too long and ask what to cut. Never silently truncate content
+7. **Company folder naming** — lowercase, hyphens for spaces (e.g., `goldman-sachs`, `jane-street`, `boston-consulting-group`)
+8. **Don't overwrite without asking** — if a company folder already exists with a tailored resume, ask before replacing it
+9. **Be interactive** — present your analysis and suggestions first, discuss with the user, and only write files after they approve
 
 ## Detecting the Sub-Task
 
@@ -98,9 +100,10 @@ Wait for the user's response. Only proceed to Step 5 after they explicitly appro
 Once the user approves:
 1. Create `companies/<company-name>/` folder if it doesn't exist
 2. Save `job-description.txt`
-3. Write the tailored resume in the same format as the master (e.g., `resume.tex` or `resume.md`)
-4. Compile to PDF — see [pdf-compilation.md](references/pdf-compilation.md) for cross-platform instructions
-5. Confirm to the user: list all files saved with their paths
+3. Write the tailored resume using the **same filename** as the master (e.g., if master is `main 2.tex`, save as `companies/<company-name>/main 2.tex`). Copy the preamble verbatim — only change content inside `\begin{document}...\end{document}`
+4. Compile to PDF and verify it is exactly one page — see [pdf-compilation.md](references/pdf-compilation.md) for instructions
+5. If the PDF is more than one page, **stop** and ask the user what to cut before proceeding
+6. Confirm to the user: list all files saved with their paths
 
 ## Reference Files
 
