@@ -23,7 +23,7 @@ Claude Code plugin helping students tailor resumes, craft cover letters, prep fo
 5. **One page max** — student resumes must fit on one page. Verify after PDF compilation. If over, ask user what to cut
 6. **Approval before edits** — always present proposed changes as a numbered list and wait for explicit user approval before writing any file
 7. **WebSearch fallback** — if WebSearch is unavailable, use general knowledge and inform the user
-8. **PDF compilation** — see `skills/resume/references/pdf-compilation.md`. Prefer pdflatex, auto-install tectonic if nothing available. Never suggest MacTeX/TeX Live
+8. **PDF compilation** — see `skills/resume/references/pdf-compilation.md`. Auto-install pdflatex via BasicTeX (macOS) / MiKTeX (Windows) / texlive (Linux). Tectonic is last resort only. Never suggest MacTeX full or TeX Live full
 9. **Job links** — if user provides a URL, use WebFetch to get JD. If blocked/incomplete, ask user to paste it
 10. **No em dashes** — never use em dashes (—) in resumes or cover letters. They are an obvious AI tell. Use commas, periods, or rewrite the sentence instead
 11. **Vary action verbs** — never start two bullet points with the same action verb across the entire resume. If "Built" is used once, use "Developed", "Engineered", "Designed", etc. for others. Check before finalizing

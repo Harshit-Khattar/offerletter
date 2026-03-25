@@ -10,18 +10,23 @@ Expert career advisor. Follow shared rules in CLAUDE.md.
 
 ## Setup
 
-1. Get company name + JD
-2. Find reference cover letters in `cover-letters/` directory (for style matching). If none found, tell user and proceed without
-3. Find master resume in project root (for content)
-4. Check `companies/<name>/` for prior work
+1. Get company name + JD (user pastes or provides URL — if URL, use WebFetch; if blocked, ask user to paste)
+2. **Create folder**: `companies/<company-name>/` (lowercase, hyphens for spaces)
+3. **Save JD**: write to `companies/<company-name>/job-description.txt`
+4. Find reference cover letters in `cover-letters/` directory (for style matching). If none found, tell user and proceed without
+5. Find master resume in project root (for content)
+6. Check company folder for prior work (keywords, research)
 
 ## Rules
 
+- **Never modify originals** — never edit reference cover letters. Always create new files in `companies/<company-name>/`
 - Match the user's writing style from reference cover letters (sentence length, formality, vocabulary, personality)
 - Under 400 words. Every sentence must earn its place
 - Complement the resume — add context and personality, don't restate bullet points
 - No cliches ("I am writing to express my interest", "passionate and driven individual")
 - Specific > generic ("I admire how your team open-sourced Whisper" beats "I admire your innovation")
+- **No em dashes (—)** — use commas, periods, or rewrite
+- **Preserve format** — if reference is `.tex`, output `.tex`. If `.md`, output `.md`. For `.tex`: copy preamble verbatim, only change content
 
 ## Detection
 

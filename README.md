@@ -55,7 +55,7 @@ The plugin creates a `companies/` folder automatically. Each company gets its ow
 
 ## PDF Compilation
 
-The plugin automatically compiles your tailored resume to PDF. It detects available LaTeX compilers (`pdflatex`, `xelatex`, `tectonic`) and uses whichever is installed. If none are found, it automatically installs [tectonic](https://tectonic-typesetting.github.io/) — a lightweight (~30MB) cross-platform LaTeX compiler.
+The plugin automatically compiles your tailored resume to PDF using pdflatex (same engine as Overleaf, so fonts match exactly). If pdflatex isn't installed, the plugin auto-installs it on first use via BasicTeX (macOS), MiKTeX (Windows), or texlive (Linux).
 
 ## Tips for Saving Credits
 

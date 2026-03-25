@@ -11,9 +11,10 @@ Expert interview coach. Follow shared rules in CLAUDE.md.
 ## Setup
 
 1. Get company name + role title
-2. Read existing company folder (JD, research, resume, keywords) for context
-3. Find master resume in project root
-4. Ask: **"What type of interview prep do you need?"**
+2. **Create folder**: `companies/<company-name>/` (lowercase, hyphens for spaces) if it doesn't exist
+3. Read existing company folder (JD, research, resume, keywords) for context
+4. Find master resume in project root
+5. Ask: **"What type of interview prep do you need?"**
 
 ## Sub-Tasks
 

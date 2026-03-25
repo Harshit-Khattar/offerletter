@@ -10,9 +10,11 @@ Expert resume consultant. Follow shared rules in CLAUDE.md.
 
 ## Setup
 
-1. Get company name + JD (user pastes or provides link). See CLAUDE.md rule 9 for links
+1. Get company name + JD (user pastes or provides URL — if URL, use WebFetch to get content; if blocked, ask user to paste)
 2. Find master resume in project root (any `.tex`, `.md`, or `.pdf` file — may not have "resume" in name). If multiple, ask which one
-3. Check `companies/<company-name>/` for prior work (JD, keywords, research)
+3. **Create company folder**: `companies/<company-name>/` (lowercase, hyphens for spaces, e.g. `goldman-sachs`)
+4. **Save JD**: write to `companies/<company-name>/job-description.txt` before doing any analysis
+5. Check company folder for prior work (keywords, research from other skills)
 
 ## Sub-Tasks
 
@@ -33,11 +35,19 @@ Determine from user request. If unclear, ask. Default is Resume-JD Alignment.
 
 **Step 3: Get approval** — wait for explicit "go ahead." User may remove, modify, or add changes.
 
-**Step 4: Write** — create tailored resume per CLAUDE.md rules (same filename, verbatim preamble, only change `\begin{document}` content).
+**Step 4: Write** — create tailored resume in `companies/<name>/`. Critical rules:
+- **Same filename** as master (e.g., if master is `main 2.tex`, output is `companies/<name>/main 2.tex`)
+- **Copy preamble verbatim** — everything before `\begin{document}` must be identical to master. Do NOT add, remove, or change any preamble line
+- **Only edit content** inside `\begin{document}...\end{document}`
+- **No em dashes (—)** anywhere. Use commas, periods, or rewrite
+- **No repeated action verbs** — every bullet starts with a unique verb. Check the full resume before finalizing
+- **Preserve spacing** — do not add/remove `\vspace`, section spacing, or blank lines from the original structure
 
-**Step 5: Compile + verify** — compile to PDF per [pdf-compilation.md](references/pdf-compilation.md). Check page count — must be 1 page. If over, stop and ask user what to cut.
+**Step 5: Compile + verify** — compile to PDF per [pdf-compilation.md](references/pdf-compilation.md). Run page count check command. **If >1 page: STOP. Do not tell user it's done.** Tell user it's over 1 page, suggest specific cuts, wait for decision, recompile.
 
-**Step 6: Confirm** — list all files saved with paths.
+**Step 6: Final check** — before confirming, verify: (a) filename matches master, (b) no em dashes in file, (c) page count = 1, (d) no repeated starting verbs.
+
+**Step 7: Confirm** — list all files saved with paths.
 
 ## References (load only when needed)
 

@@ -9,58 +9,78 @@ Shared across resume and cover-letter skills.
 - `.tex` → compile directly
 - `.md` → convert to LaTeX first (article class, geometry/enumitem/hyperref/titlesec packages), save as `.tex`, then compile
 
-### 2. Check Compilers
+### 2. Check for pdflatex
 
 ```bash
 pdflatex --version 2>/dev/null && echo "FOUND: pdflatex"
-xelatex --version 2>/dev/null && echo "FOUND: xelatex"
-tectonic --version 2>/dev/null && echo "FOUND: tectonic"
 ```
 
-Prefer pdflatex (matches Overleaf output). If none found → step 3.
+If pdflatex found → skip to step 4. If not → step 3.
 
-### 3. Auto-Install Tectonic
+### 3. Auto-Install pdflatex
 
-Tell user: "No compiler found. Installing tectonic (~30MB)." Never suggest MacTeX/TeX Live.
+Tell user: "No LaTeX compiler found. Installing pdflatex (one-time setup, matches Overleaf output)." Never suggest MacTeX full or TeX Live full.
 
 ```bash
 uname -s  # Darwin/Linux/MINGW
 ```
 
-**macOS:** `which brew && brew install tectonic` or download binary from GitHub releases
-**Windows:** `winget install tectonic-typesetting.tectonic` or `scoop install tectonic`
-**Linux:** `sudo apt install tectonic` or download binary from GitHub releases
+**macOS:**
+```bash
+brew install --cask basictex
+# Reload shell PATH to pick up new install
+eval "$(/usr/libexec/path_helper)"
+# Install common resume packages
+sudo tlmgr update --self
+sudo tlmgr install fontawesome5 enumitem titlesec preprint ragged2e everysel tocloft
+```
 
-If install fails, tell user how to install manually.
+**Windows:**
+```bash
+winget install MiKTeX.MiKTeX
+```
+MiKTeX auto-installs missing packages on first compile — no extra steps needed.
+
+**Linux:**
+```bash
+sudo apt update && sudo apt install -y texlive-base texlive-latex-extra texlive-fonts-extra texlive-fonts-recommended
+```
+
+If install fails, tell user the exact command to run manually. **Last resort only**: install tectonic (`brew install tectonic` / `winget install tectonic-typesetting.tectonic`).
 
 ### 4. Compile
 
-Use same filename as master resume. Quote paths with spaces.
+Use **same filename as master resume**. Quote paths with spaces.
 
 ```bash
-# pdflatex (run twice)
+# pdflatex (run twice for references)
 pdflatex -interaction=nonstopmode "filename.tex" && pdflatex -interaction=nonstopmode "filename.tex"
-
-# OR tectonic
-tectonic "filename.tex"
 ```
 
-### 5. Verify Page Count
+**If pdflatex fails on a missing package**: install it with `sudo tlmgr install <package-name>` (macOS/Linux) and retry. MiKTeX (Windows) handles this automatically.
+
+**Tectonic fallback only**: if pdflatex is unavailable and tectonic is installed:
+- Comment out `\input{glyphtounicode}` and `\pdfgentounicode=1` (pdflatex-only, tectonic will error)
+- Run `tectonic "filename.tex"`
+- Restore the commented lines after compiling
+- Warn user: fonts may look slightly different from Overleaf
+
+### 6. Verify Page Count (HARD GATE)
 
 ```bash
 mdls -name kMDItemNumberOfPages "filename.pdf" 2>/dev/null  # macOS
 pdfinfo "filename.pdf" 2>/dev/null | grep Pages              # cross-platform
 ```
 
-If >1 page: stop, tell user, suggest cuts, wait for decision, recompile.
+**If >1 page: DO NOT tell user it's done.** Stop immediately, tell user it's over 1 page, suggest specific lines to cut, wait for their decision, then recompile and re-verify. Never claim "1 page" without running this check.
 
-### 6. Clean Up
+### 7. Clean Up
 
 ```bash
 rm -f *.aux *.log *.out *.synctex.gz *.fls *.fdb_latexmk
 ```
 
-### 7. Failures
+### 8. Failures
 
 Fix .tex errors if possible and retry. If unresolvable, save .tex and tell user to compile manually with tectonic.
 

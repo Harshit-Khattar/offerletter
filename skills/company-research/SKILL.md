@@ -11,7 +11,8 @@ Single-output research skill. Follow shared rules in CLAUDE.md.
 ## Setup
 
 1. Get company name (from `$ARGUMENTS` or ask)
-2. If `companies/<name>/company-research.md` exists, ask: update or start fresh?
+2. **Create folder**: `companies/<company-name>/` (lowercase, hyphens for spaces)
+3. If `companies/<company-name>/company-research.md` exists, ask: update or start fresh?
 
 ## Web Research Queries
 
