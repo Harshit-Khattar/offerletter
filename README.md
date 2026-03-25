@@ -55,7 +55,15 @@ The plugin creates a `companies/` folder automatically. Each company gets its ow
 
 ## PDF Compilation
 
-The plugin automatically compiles your tailored resume to PDF. It detects available LaTeX compilers (`pdflatex`, `xelatex`, `tectonic`) and uses whichever is installed. If none are found, it offers to install [tectonic](https://tectonic-typesetting.github.io/) — a lightweight, cross-platform LaTeX compiler.
+The plugin automatically compiles your tailored resume to PDF. It detects available LaTeX compilers (`pdflatex`, `xelatex`, `tectonic`) and uses whichever is installed. If none are found, it automatically installs [tectonic](https://tectonic-typesetting.github.io/) — a lightweight (~30MB) cross-platform LaTeX compiler.
+
+## Tips for Saving Credits
+
+- **Run `/offerletter:keywords` before `/offerletter:resume`** — extracted keywords get reused automatically
+- **Paste the job description directly** — faster and cheaper than providing a URL
+- **Company data carries over** — research, keywords, and JD are saved in `companies/` and reused across skills
+- **Do `/offerletter:career` once** — self-assessment and role clarity don't change per company
+- **Be specific** — `/offerletter:resume google` with a clear request is faster than letting Claude ask clarifying questions
 
 ## License
 
