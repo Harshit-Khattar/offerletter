@@ -14,12 +14,23 @@ When the user invokes this skill:
 
 1. **Ask for context** if not already provided via `$ARGUMENTS`:
    - Company name (required)
-   - Job description (required — user pastes it or provides a link)
-2. **Find the master resume** in the project root — look for any `.tex`, `.md`, or `.pdf` file with "resume" in the name
+   - Job description (required — user pastes it, or provides a link)
+   - **If the user provides a job posting URL**: use WebFetch to retrieve the page content. Extract the job description text. If the page is blocked, returns incomplete content, or is JavaScript-heavy, ask the user to paste the JD directly instead
+2. **Find the master resume** in the project root — look for any `.tex`, `.md`, or `.pdf` file. It may not have "resume" in the name (e.g., `main 2.tex` is a valid resume file). If multiple candidates exist, ask the user which one is their master resume
 3. **Check for an existing company folder** at `companies/<company-name>/` — if it exists, read any prior work (job description, previous tailored resume, keywords, research) for context
 
 If the master resume is not found, tell the user:
 > "I couldn't find a master resume in the project root. Please place your resume file (e.g., `resume.tex` or `resume.md`) in the root of this folder."
+
+## ⚠️ MANDATORY: Get Approval Before Every Edit
+
+**NEVER write or edit any file without the user's explicit approval.** Before touching the resume, you MUST:
+
+1. Present ALL proposed changes as a numbered list with **before → after** for each change
+2. Wait for the user to say "go ahead" or equivalent
+3. If the user removes or modifies any items, update your list and confirm again
+
+This is non-negotiable. Skipping approval and going straight to editing is the #1 thing to avoid.
 
 ## Core Rules
 
