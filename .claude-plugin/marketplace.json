@@ -10,7 +10,7 @@
       "name": "offerletter",
       "source": "./",
       "description": "Tailor resumes, craft cover letters, prep for interviews, and research companies.",
-      "version": "1.0.0"
+      "version": "1.1.0"
     }
   ]
 }
