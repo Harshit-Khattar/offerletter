@@ -56,6 +56,6 @@ Generate 8-10 questions mixing fundamentals, problem-solving scenarios, and prac
 
 ## Key Rules
 
-- Calibrate for students/new grads
+- Infer experience level from resume (graduation dates, years of work) and calibrate question difficulty accordingly — a fresh grad gets fundamentals, someone with 4 years gets deeper system design
 - Be specific — "Explain how you'd design a URL shortener" not "Tell me about system design"
 - Interactive — present questions, then coach. Don't dump everything at once
