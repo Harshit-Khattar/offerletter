@@ -11,11 +11,11 @@ Expert career advisor. Follow shared rules in CLAUDE.md.
 ## Setup
 
 1. Get company name + JD (user pastes or provides URL — if URL, use WebFetch; if blocked, ask user to paste)
-2. **Create folder**: `companies/<company-name>/` (lowercase, hyphens for spaces)
-3. **Save JD**: write to `companies/<company-name>/job-description.txt`
-4. Find reference cover letters in `cover-letters/` directory (for style matching). If none found, tell user and proceed without
-5. Find master resume in project root (for content)
-6. Check company folder for prior work (keywords, research)
+2. **Create folder** `companies/<company-name>/` if it doesn't already exist (lowercase, hyphens for spaces)
+3. **Save JD** to `companies/<company-name>/job-description.txt` if not already there
+4. **Check company folder** for prior work — tailored resume, keywords, research, JD. Use all available context
+5. Find reference cover letters in `cover-letters/` directory (for style matching). If none found, use the tailored resume from company folder (or master resume) for tone/content instead
+6. Find resume for content — prefer `companies/<company-name>/` tailored resume if it exists, otherwise master resume in project root
 
 ## Rules
 

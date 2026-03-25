@@ -11,8 +11,9 @@ Single-output research skill. Follow shared rules in CLAUDE.md.
 ## Setup
 
 1. Get company name (from `$ARGUMENTS` or ask)
-2. **Create folder**: `companies/<company-name>/` (lowercase, hyphens for spaces)
-3. If `companies/<company-name>/company-research.md` exists, ask: update or start fresh?
+2. **Create folder** `companies/<company-name>/` if it doesn't already exist (lowercase, hyphens for spaces)
+3. **Check company folder** for prior work — JD, keywords, resume. Use all available context for better research
+4. If `companies/<company-name>/company-research.md` exists, ask: update or start fresh?
 
 ## Web Research Queries
 

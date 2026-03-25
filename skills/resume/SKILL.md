@@ -12,9 +12,9 @@ Expert resume consultant. Follow shared rules in CLAUDE.md.
 
 1. Get company name + JD (user pastes or provides URL — if URL, use WebFetch to get content; if blocked, ask user to paste)
 2. Find master resume in project root (any `.tex`, `.md`, or `.pdf` file — may not have "resume" in name). If multiple, ask which one
-3. **Create company folder**: `companies/<company-name>/` (lowercase, hyphens for spaces, e.g. `goldman-sachs`)
-4. **Save JD**: write to `companies/<company-name>/job-description.txt` before doing any analysis
-5. Check company folder for prior work (keywords, research from other skills)
+3. **Create folder** `companies/<company-name>/` if it doesn't already exist (lowercase, hyphens for spaces, e.g. `goldman-sachs`)
+4. **Save JD** to `companies/<company-name>/job-description.txt` if not already there
+5. **Check company folder** for all prior work — keywords, research, JD, cover letter. Use all available context
 
 ## Sub-Tasks
 

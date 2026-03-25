@@ -12,8 +12,8 @@ Single-output skill. Follow shared rules in CLAUDE.md.
 
 1. Get company name (from `$ARGUMENTS` or ask)
 2. Get JD — user pastes it, provides URL (use WebFetch), or check existing `companies/<name>/job-description.txt`
-3. **Create folder**: `companies/<company-name>/` (lowercase, hyphens for spaces, e.g. `goldman-sachs`)
-4. **Save JD**: write to `companies/<company-name>/job-description.txt`
+3. **Create folder** `companies/<company-name>/` if it doesn't already exist (lowercase, hyphens for spaces, e.g. `goldman-sachs`)
+4. **Save JD** to `companies/<company-name>/job-description.txt` if not already there
 
 ## Process
 
