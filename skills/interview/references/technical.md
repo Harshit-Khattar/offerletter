@@ -1,26 +1,50 @@
 # Technical Interview Reference
 
-## Calibration
+Calibrate for entry-level/new grad. Questions solvable in 15-20 min discussion.
 
-Entry-level / new grad. Questions solvable in 15-20 min discussion. Focus on fundamentals and approach, not obscure edge cases.
+## Role-Specific Question Areas
 
-## Question Categories
+### SWE / Full-Stack
+- Data structures & algorithms (arrays, trees, graphs, hash maps, complexity)
+- System design (simplified — design a feature, not a platform)
+- API design, REST, database modeling
+- Coding: one problem with brute force + optimized solution
+- Debugging and testing approaches
 
-**1. Fundamentals** — test core concepts for the role:
-- SWE: data structures, algorithms, OOP, SQL
-- DS: statistics, ML basics, model evaluation, data wrangling
-- ML Eng: deep learning, MLOps, deployment, training pipelines
-- AI Eng: transformers, RAG, model integration, evaluation
+### Data Scientist / Analyst
+- Statistics: hypothesis testing, p-values, distributions, confidence intervals
+- SQL: joins, aggregation, window functions, optimization
+- A/B testing: design, sample size, significance, pitfalls
+- ML basics: bias-variance, overfitting, model selection, evaluation metrics
+- Case studies: "How would you measure success of [feature]?"
+- Data wrangling: missing data, outliers, feature engineering
 
-**2. Problem-solving approach** — present a scenario, ask for approach before code:
-- "Model accuracy dropped 5% after retraining. How would you investigate?"
-- "API is slow. How would you diagnose?"
-- Evaluate: do they ask clarifying questions? Consider edge cases? Discuss tradeoffs?
+### ML / AI Engineer
+- Deep learning: architectures, backprop, attention, transformers
+- Model deployment: latency, serving, monitoring, A/B testing
+- Training pipelines: data processing, distributed training, versioning
+- System design for ML: feature stores, inference optimization, RAG pipelines
+- Evaluation: offline vs online metrics, bias detection
 
-**3. Coding** — one clear problem, brute force + optimized solution, relates to real work scenarios
+### DevOps / SRE
+- Infrastructure: containers, orchestration, networking, load balancing
+- CI/CD: pipeline design, testing strategies, rollback
+- Monitoring: alerting, SLOs, incident response, postmortems
+- Reliability: redundancy, failover, chaos engineering concepts
 
-**4. System design (simplified)** — design a feature, not a platform. Cover: data model, API design, storage choice, one scalability consideration
+### Product Manager
+- Product sense: "How would you improve [product]?"
+- Estimation: "How many X are there in Y?"
+- Prioritization: frameworks (RICE, impact/effort), tradeoff decisions
+- Metrics: defining success, north star metrics, leading vs lagging
+- Stakeholder: handling conflicting priorities, communicating tradeoffs
 
-## Generating from JD
+### Other Roles
+Ask user about their focus areas. Generate questions on fundamentals + practical scenarios for that domain.
 
-For each required skill: create one conceptual question + one practical scenario question. Provide 3-5 key points the interviewer expects per question.
+## Question Generation Rules
+
+1. Mix: 3-4 fundamentals, 2-3 problem-solving scenarios, 1-2 system design / case study
+2. For each question: state the question, key points interviewer expects, common mistakes
+3. Connect to JD — if JD mentions specific tech, include questions on it
+4. Include at least one "walk me through your approach" question (tests thinking process)
