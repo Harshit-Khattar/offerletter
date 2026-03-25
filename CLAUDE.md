@@ -25,3 +25,5 @@ Claude Code plugin helping students tailor resumes, craft cover letters, prep fo
 7. **WebSearch fallback** — if WebSearch is unavailable, use general knowledge and inform the user
 8. **PDF compilation** — see `skills/resume/references/pdf-compilation.md`. Prefer pdflatex, auto-install tectonic if nothing available. Never suggest MacTeX/TeX Live
 9. **Job links** — if user provides a URL, use WebFetch to get JD. If blocked/incomplete, ask user to paste it
+10. **No em dashes** — never use em dashes (—) in resumes or cover letters. They are an obvious AI tell. Use commas, periods, or rewrite the sentence instead
+11. **Vary action verbs** — never start two bullet points with the same action verb across the entire resume. If "Built" is used once, use "Developed", "Engineered", "Designed", etc. for others. Check before finalizing
